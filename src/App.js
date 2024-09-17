@@ -1,4 +1,4 @@
-// src/App.js
+
 import React, { useState } from 'react';
 import BookList from './components/BookList';
 import Cart from './components/Cart';

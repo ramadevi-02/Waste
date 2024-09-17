@@ -1,4 +1,3 @@
-// src/components/BookList.js
 import React from 'react';
 
 function BookList({ books, addToCart }) {

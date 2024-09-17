@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import BookList from './components/BookList';
+import Cart from './components/Cart';
+import books from './data/books';
 import './App.css';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (book) => {
+    setCart([...cart, book]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Book Shopping</h1>
+      <BookList books={books} addToCart={addToCart} />
+      <Cart cart={cart} />
     </div>
   );
 }
